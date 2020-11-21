@@ -8,8 +8,8 @@ features = ["some", "awesome", "features"]
 min_version = "0.78.0"
 
 [author]
-  name = "Samuel Meuli"
-  homepage = "https://samuelmeuli.com"
+  name = "Victoria Rodriguez"
+  homepage = "https://toriwrites.online"
 
 [original]
   name = "Hugo Starter Theme"
