@@ -1,0 +1,17 @@
+{{ define "main" }}
+	<!--
+		Default template for a single page. Additional classes are includedd for posts (pages with a
+		publication date).
+	-->
+	<div class="tile is-parent page{{ if .Date }} post{{ end }}">
+		<article class="tile is-child box">
+			<div class="content">
+				<h2 class="title page-title{{ if .Date }} post-title{{ end }}">{{ .Title }}</h2>
+				{{ partial "post-metadata.html" . }}
+				<div class="content page-content{{ if .Date }} post-content{{ end }}">{{ .Content }}</div>
+			</div>
+		</article>
+
+		{{ partial "post-actions.html" . }}
+	</div>
+{{ end }}

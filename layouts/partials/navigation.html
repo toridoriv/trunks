@@ -1,0 +1,50 @@
+<!--
+	Navigation: Lists all items in the "main" menu. For each menu entry, its path is compared with the
+	current page's first path component to determine wheter it is child of that page. If so, the menu
+	item is marked as active.
+-->
+<aside class="menu">
+	<p class="menu-label">Navigation</p>
+	<ul class="menu-list">
+		{{ $currentPage := .RelPermalink }}
+		{{ range $index, $page := .Site.Menus.main }}
+		<li>
+			<a href="{{ $page.URL }}"
+				 class="{{ if eq $currentPage $page.URL }} is-active {{ end }}">{{ $page.Name }}</a>
+		</li>
+		{{ end }}
+	</ul>
+	<p class="menu-label">
+		Helpers
+	</p>
+	<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+		<thead>
+		<tr>
+			<th>Variable Name</th>
+			<th>Value</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr class="is-selected">
+			<th>Title</th>
+			<td>{{ .Title }}</td>
+		</tr>
+		<tr>
+			<th>Pages</th>
+			<td>
+				<ul>
+					{{ range .Pages }}
+					<li> {{ .Title }} </li>
+					{{ end }}
+				</ul>
+			</td>
+		</tr>
+		{{ range $key, $value := .Params }}
+		<tr>
+			<th>{{ $key }}</th>
+			<td>{{ $value }}</td>
+		</tr>
+		{{ end }}
+		</tbody>
+	</table>
+</aside>

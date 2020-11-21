@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+	{{ partial "head.html" . }}
+
+	<body class="mt-3">
+	<div class="container tiles">
+		<div class="tile is-ancestor">
+			<div class="tile is-parent is-vertical is-4">
+				<article class="tile is-child box is-flex-grow-0">
+					{{ partial "header.html" . }}
+				</article>
+				<article class="tile is-child box is-flex-grow-0">
+					{{ partial "navigation.html" . }}
+				</article>
+				<article class="is-child box">
+					{{ partial "footer.html" . }}
+				</article>
+			</div>
+			<div class="tile is-parent">
+				<article class="tile is-child">
+					{{ block "main" . }}{{ end }}
+				</article>
+			</div>
+		</div>
+	</div>
+	</body>
+</html>

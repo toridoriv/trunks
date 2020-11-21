@@ -1,0 +1,17 @@
+name = "Trunks"
+license = "MIT"
+licenselink = "https://github.com/nerdalot/trunks/blob/master/LICENSE.md"
+description = "Boilerplate for building a custom Hugo theme using the Bulma framework"
+homepage = "https://github.com/nerdalot/trunks"
+tags = ["blog", "bulma"]
+features = ["some", "awesome", "features"]
+min_version = "0.78.0"
+
+[author]
+  name = "Samuel Meuli"
+  homepage = "https://samuelmeuli.com"
+
+[original]
+  name = "Hugo Starter Theme"
+  homepage = "https://samuelmeuli.com"
+  repo = "https://github.com/samuelmeuli/hugo-starter-theme"

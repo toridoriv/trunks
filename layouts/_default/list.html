@@ -1,0 +1,21 @@
+{{ define "main" }}
+	<!--
+		Default template for a list page.
+	-->
+	<div class="page list-page">
+		<!-- Title and content of list page -->
+		<h2 class="page-title list-page-title">{{ .Title }}</h2>
+		<div class="page-content list-page-content">{{ .Content }}</div>
+
+		<!-- List of subpages -->
+		<ul class="page-preview-list">
+			{{ range .Pages }}
+				<li class="page-preview">
+					<h3 class="page-preview-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+					{{ partial "post-metadata.html" . }}
+					<p class="page-preview-summary">{{ .Summary }}</p>
+				</li>
+			{{ end }}
+		</ul>
+	</div>
+{{ end }}

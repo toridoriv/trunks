@@ -1,0 +1,45 @@
+{{ define "main" }}
+	<!--
+		Homepage.
+	-->
+	<div class="page homepage">
+		<h2 class="page-title homepage-title">{{ .Title }}</h2>
+		<div class="page-content homepage-content">{{ .Content }}</div>
+		<h1 class="title">
+			Posts
+		</h1>
+		{{ with .Site.GetPage "/blog" }}
+		{{ range first 3 .Pages }}
+		<div class="card box">
+			<div class="card-header">
+				<p class="card-header-title">
+					{{ .Title }}
+				</p>
+			</div>
+			<div class="card-content">
+				<div class="content">
+					<small>
+						<time datetime="{{ .PublishDate.Format "2006-01-02" }}">{{ .PublishDate.Format "Jan. 2, 2006" }}</time>
+					</small>
+					<p>
+						{{ .Summary }}
+					</p>
+				</div>
+			</div>
+			<footer class="card-footer">
+				{{ range .Params.tags }}
+					<a class="card-footer-item" href="/tags/{{ . | urlize }}">
+						{{.}}
+					</a>
+				{{ end }}
+			</footer>
+		</div>
+		{{ end }}
+		{{ end }}
+		<p> {{ .Pages }} </p>
+		{{.Sections}}
+		{{ range $index, $section := .Site.Sections }}
+		<p> {{ $section.Name }} </p>
+		{{ end }}
+	</div>
+{{ end }}

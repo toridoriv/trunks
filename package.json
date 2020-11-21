@@ -1,0 +1,11 @@
+{
+ "comments": {
+  "dependencies": {},
+  "devDependencies": {}
+ },
+ "devDependencies": {
+  "bulma": "^0.9.1"
+ },
+ "name": "trunks",
+ "version": "0.1.0"
+}
