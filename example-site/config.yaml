@@ -2,3 +2,6 @@ baseURL: https://example.com/
 languageCode: en-us
 title: Trunks Demo
 theme: trunks
+
+params:
+  subtitle: "A Bulma-Hugo Boilerplate 💎"

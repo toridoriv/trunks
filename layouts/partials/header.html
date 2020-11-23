@@ -1,5 +1,17 @@
 <!-- Site header with title and main menu. -->
-<div class="content">
-	<h1 class="title is-1"><a class="link is-info" href="{{ .Site.BaseURL | relLangURL }}">{{ .Site.Title }}</a></h1>
-	<h2 class="subtitle">A Hugo-Bulma Boilerplate</h2>
-</div>
+<nav class="navbar is-flex-direction-column" role="navigation" aria-label="main navigation">
+	<div class="navbar-brand">
+		<a href="{{ .Site.BaseURL | relLangURL }}" class="navbar-item">
+			<h1 class="title">
+				{{ .Site.Title }}
+			</h1>
+		</a>
+	</div>
+	{{ if .Site.Params.Subtitle }}
+	<div class="navbar-item">
+		<h2 class="subtitle has-text-weight-light">
+			{{ .Site.Params.Subtitle }}
+		</h2>
+	</div>
+	{{ end }}
+</nav>
